@@ -171,12 +171,12 @@
 				w += r.watchers;
 				f += r.forks;
 				fork ? lf++ : lp++;
-				html += '<li' + fork + '>' + '<a href="' + r.html_url + '">' + '<span class="info"><b class="language">' + (r.language || '') + '</b> <span id="border"><b class="stars">' + watchers + '</b></span> <span id="border"><b class="forks">' + forks + '</b></span></span>' + '<b>' + r.name + '</b> ' +
+				html += '<li' + fork + '>' + '<a href="' + r.html_url + '">' + '<span class="info"><b class="language">' + (r.language || '') + '</b> <b class="stars">' + watchers + '</b> <b class="forks">' + forks + '</b></span>' + '<b>' + r.name + '</b> ' +
 					'<span class="desc">' + r.description + '</span>' + '</a>';
 			}
 			reposList.innerHTML = html;
 			projectsCount.innerHTML = l + ' repositories; ' + lp + ' public, ' + lf + ' forks';
-			projectsInfo.innerHTML = '<b class="stars">' + w + '</b> <b class="forks">' + f + '</b>';
+			projectsInfo.innerHTML = '<span id="border"><b class="stars">' + w + '</b></span> <span id="border"><b class="forks">' + f + '</b></span>';
 		};
 </script>
 <script src="https://api.github.com/users/arietux/repos?callback=load&per_page=100"></script>
